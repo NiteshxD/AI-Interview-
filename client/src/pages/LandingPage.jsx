@@ -172,8 +172,12 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer style={{ textAlign: 'center', padding: '24px', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-        Build By Nitesh Yadav
+      <footer style={{ textAlign: 'center', padding: '32px 24px', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+        <p style={{ margin: '0 0 12px' }}>Build By Nitesh Yadav</p>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
+          <a href="https://x.com/NiteshhXd" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>X (Twitter)</a>
+          <a href="https://github.com/NiteshxD" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>GitHub</a>
+        </div>
       </footer>
     </div>
   );
