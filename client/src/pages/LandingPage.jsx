@@ -49,9 +49,6 @@ const LandingPage = () => {
           <Link to="/signup" className="btn-primary" style={{ textDecoration: 'none', padding: '14px 36px', fontSize: '1.05rem' }}>
             Start Practicing Free
           </Link>
-          <Link to="/login" className="btn-secondary" style={{ textDecoration: 'none', padding: '14px 36px', fontSize: '1.05rem' }}>
-            View Demo
-          </Link>
         </div>
       </motion.section>
 
