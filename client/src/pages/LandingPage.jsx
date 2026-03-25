@@ -90,6 +90,52 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* How it Works Section */}
+      <section style={{ padding: '60px 48px 100px', background: 'var(--bg-secondary)', position: 'relative', zIndex: 10 }}>
+        <div style={{ textAlign: 'center', marginBottom: 60 }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 800, margin: '0 0 16px' }}>
+            How it <span className="gradient-text">Works</span>
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: 600, margin: '0 auto' }}>
+            Four simple steps to elevate your interview preparation.
+          </p>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: 30,
+          maxWidth: 1200,
+          margin: '0 auto'
+        }}>
+          {[
+            { step: '01', title: 'AI Mock Interviews', desc: 'Select your target role and difficulty. Practice behavioral and technical questions with realistic AI.', icon: HiOutlineChatBubbleLeftRight, color: '#3b82f6' },
+            { step: '02', title: 'Coding Challenges', desc: 'Solve real-world coding problems. Write, run, and test your code natively in our built-in Lab.', icon: HiOutlineCommandLine, color: '#8b5cf6' },
+            { step: '03', title: 'Resume Analyzer', desc: 'Drop your resume to get an instant ATS score and tailored AI suggestions to bypass filters.', icon: HiOutlineDocumentText, color: '#ec4899' },
+            { step: '04', title: 'Track Progress', desc: 'Monitor your performance over time. View average scores, history by role, and improvement areas.', icon: HiOutlineChartBarSquare, color: '#10b981' }
+          ].map((item, i) => (
+            <motion.div
+              key={item.step}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: 0.15 * i, duration: 0.5 }}
+              className="glass-card"
+              style={{ padding: 32, position: 'relative', overflow: 'hidden' }}
+            >
+              <div style={{ position: 'absolute', top: -20, right: -10, fontSize: '8rem', fontWeight: 900, color: 'rgba(255,255,255,0.03)', pointerEvents: 'none', lineHeight: 1 }}>
+                {item.step}
+              </div>
+              <div style={{ width: 56, height: 56, borderRadius: 16, background: `${item.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
+                <item.icon size={28} color={item.color} />
+              </div>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: 12 }}>{item.title}</h3>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Footer */}
       <footer style={{ textAlign: 'center', padding: '24px', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
         Build By Nitesh Yadav
