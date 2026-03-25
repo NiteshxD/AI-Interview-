@@ -109,7 +109,7 @@ const LandingPage = () => {
 
       {/* Footer */}
       <footer style={{ textAlign: 'center', padding: '24px', borderTop: '1px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-        Built with ♥ using MERN Stack + Gemini AI
+        Build By Nitesh Yadav
       </footer>
     </div>
   );
