@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { HiOutlineArrowLeft } from 'react-icons/hi2';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -34,9 +35,13 @@ const LoginPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="glass-card"
-        style={{ width: '100%', maxWidth: 440, padding: '48px 40px' }}
+        style={{ width: '100%', maxWidth: 440, padding: '48px 40px', position: 'relative' }}
       >
-        <div style={{ textAlign: 'center', marginBottom: 36 }}>
+        <Link to="/" style={{ position: 'absolute', top: 24, left: 24, color: 'var(--text-secondary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, fontSize: '0.9rem', fontWeight: 500, transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
+          <HiOutlineArrowLeft size={18} style={{ pointerEvents: 'none' }} /> Back
+        </Link>
+
+        <div style={{ textAlign: 'center', marginBottom: 36, marginTop: 12 }}>
           <h1 style={{ fontSize: '1.8rem', fontWeight: 800, margin: '0 0 8px' }}>
             <span className="gradient-text">Welcome Back</span>
           </h1>
