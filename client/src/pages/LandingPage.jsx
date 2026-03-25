@@ -101,61 +101,70 @@ const LandingPage = () => {
           </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 80, maxWidth: 1000, margin: '0 auto' }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', position: 'relative' }}>
+          {/* Vertical Glowing Line */}
+          <div style={{
+            position: 'absolute',
+            top: 24,
+            left: 28, // Center of the 56px icon
+            bottom: 60,
+            width: 2,
+            background: 'linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink))',
+            opacity: 0.3,
+            zIndex: 1
+          }} />
+
           {[
-            { step: '01', title: 'AI Mock Interviews', desc: 'Select your target role and difficulty. Practice behavioral and technical questions with realistic AI.', icon: HiOutlineChatBubbleLeftRight, color: '#3b82f6', image: '/mock-interview.png' },
-            { step: '02', title: 'Coding Challenges', desc: 'Solve real-world coding problems. Write, run, and test your code natively in our built-in Lab.', icon: HiOutlineCommandLine, color: '#8b5cf6', image: '/coding-lab.png' },
-            { step: '03', title: 'Resume Analyzer', desc: 'Drop your resume to get an instant ATS score and tailored AI suggestions to bypass filters.', icon: HiOutlineDocumentText, color: '#ec4899', image: '/resume-analyzer.png' },
-            { step: '04', title: 'Track Progress', desc: 'Monitor your performance over time. View average scores, history by role, and improvement areas.', icon: HiOutlineChartBarSquare, color: '#10b981', image: '/dashboard.png' }
-          ].map((item, i) => (
+            { step: '01', title: 'AI Mock Interviews', desc: 'Select your target role and difficulty. Practice behavioral and technical questions with realistic AI evaluators.', icon: HiOutlineChatBubbleLeftRight, color: '#3b82f6' },
+            { step: '02', title: 'Coding Challenges', desc: 'Solve real-world coding problems. Write, run, and test your code natively in our built-in interactive Code Lab.', icon: HiOutlineCommandLine, color: '#8b5cf6' },
+            { step: '03', title: 'Resume Analyzer', desc: 'Drop your resume (PDF or Text) to get an instant ATS score and tailored AI suggestions to bypass automated filters.', icon: HiOutlineDocumentText, color: '#ec4899' },
+            { step: '04', title: 'Track Progress', desc: 'Monitor your performance over time. View average scores, history by role, and pinpoint specific improvement areas.', icon: HiOutlineChartBarSquare, color: '#10b981' }
+          ].map((item, i, arr) => (
             <motion.div
               key={item.step}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: 0.1, duration: 0.6 }}
+              transition={{ delay: 0.15 * i, duration: 0.5 }}
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                gap: 50,
-                flexDirection: i % 2 !== 0 ? 'row-reverse' : 'row',
-                flexWrap: 'wrap'
+                gap: 32,
+                position: 'relative',
+                marginBottom: i === arr.length - 1 ? 0 : 48,
+                zIndex: 2
               }}
             >
-              {/* Text Area */}
-              <div style={{ flex: '1 1 300px', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: -40, left: -20, fontSize: '10rem', fontWeight: 900, color: 'rgba(255,255,255,0.02)', pointerEvents: 'none', lineHeight: 1 }}>
-                  {item.step}
+              {/* Timeline Node */}
+              <div style={{ flexShrink: 0 }}>
+                <div style={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: '50%',
+                  background: 'var(--bg-secondary)',
+                  border: `2px solid ${item.color}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  boxShadow: `0 0 20px ${item.color}33`,
+                  zIndex: 2
+                }}>
+                  <item.icon size={26} color={item.color} />
                 </div>
-                <div style={{ width: 56, height: 56, borderRadius: 16, background: `${item.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24, position: 'relative' }}>
-                  <item.icon size={28} color={item.color} />
-                </div>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: 16 }}>{item.title}</h3>
-                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
               </div>
 
-              {/* Image Area */}
-              <div style={{ flex: '1 1 400px' }}>
-                <div className="glass-card" style={{ padding: 8, overflow: 'hidden', background: 'rgba(255,255,255,0.02)' }}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      display: 'block',
-                      borderRadius: 8,
-                      border: '1px solid rgba(255,255,255,0.05)',
-                      boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
-                      backgroundColor: 'var(--bg-primary)',
-                      aspectRatio: '16/9',
-                      objectFit: 'cover'
-                    }}
-                    onError={(e) => {
-                      e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 450"><rect fill="%231e1e2d" width="800" height="450"/><text fill="%236e6e80" font-family="sans-serif" font-size="24" font-weight="bold" x="50%" y="50%" text-anchor="middle">Image Placeholder: ' + item.image.replace('/', '') + '</text></svg>';
-                    }}
-                  />
+              {/* Content Card */}
+              <div className="glass-card" style={{ flex: 1, padding: '28px 32px', position: 'relative', overflow: 'hidden' }}>
+                <div style={{ position: 'absolute', top: -10, right: -10, fontSize: '8rem', fontWeight: 900, color: 'rgba(255,255,255,0.02)', pointerEvents: 'none', lineHeight: 1 }}>
+                  {item.step}
                 </div>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: 12, display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <span style={{ fontSize: '0.9rem', padding: '4px 10px', borderRadius: 8, background: `${item.color}15`, color: item.color, fontWeight: 700 }}>Step {i + 1}</span>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0, maxWidth: '90%' }}>
+                  {item.desc}
+                </p>
               </div>
             </motion.div>
           ))}
