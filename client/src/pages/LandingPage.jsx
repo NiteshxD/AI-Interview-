@@ -36,20 +36,6 @@ const LandingPage = () => {
         transition={{ duration: 0.8 }}
         style={{ textAlign: 'center', padding: '80px 24px 60px', position: 'relative', zIndex: 10 }}
       >
-        <motion.div
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: 'spring', stiffness: 100 }}
-        >
-          <span style={{
-            display: 'inline-block', padding: '8px 20px', borderRadius: 100,
-            background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)',
-            fontSize: '0.85rem', color: 'var(--accent-blue)', fontWeight: 600, marginBottom: 24
-          }}>
-            🚀 Powered by Google Gemini AI
-          </span>
-        </motion.div>
-
         <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, lineHeight: 1.1, margin: '0 0 20px', maxWidth: 800, marginInline: 'auto' }}>
           Ace Your Next <br />
           <span className="gradient-text">Tech Interview</span>
