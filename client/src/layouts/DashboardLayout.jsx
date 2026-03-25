@@ -12,7 +12,7 @@ const pageTitles = {
 
 const DashboardLayout = () => {
   const location = useLocation();
-  const title = pageTitles[location.pathname] || 'AI Interviewer Pro';
+  const title = pageTitles[location.pathname] || 'InterviewYouNeed';
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>

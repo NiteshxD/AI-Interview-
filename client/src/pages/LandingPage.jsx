@@ -21,7 +21,7 @@ const LandingPage = () => {
       {/* Header */}
       <nav style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '20px 48px', position: 'relative', zIndex: 10 }}>
         <h1 style={{ fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
-          <span className="gradient-text">AI Interviewer Pro</span>
+          <span className="gradient-text">InterviewYouNeed</span>
         </h1>
         <div style={{ display: 'flex', gap: 12 }}>
           <Link to="/login" className="btn-secondary" style={{ textDecoration: 'none', padding: '10px 24px' }}>Sign In</Link>

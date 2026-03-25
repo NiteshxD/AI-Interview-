@@ -42,8 +42,7 @@ const Sidebar = () => {
       {/* Logo */}
       <div style={{ padding: '0 8px 32px', borderBottom: '1px solid var(--border-color)', marginBottom: 24 }}>
         <h1 style={{ fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
-          <span className="gradient-text">AI Interviewer</span>
-          <span style={{ color: 'var(--text-muted)', fontWeight: 400, fontSize: '0.85rem', display: 'block', marginTop: 2 }}>Pro Edition</span>
+          <span className="gradient-text">InterviewYouNeed</span>
         </h1>
       </div>
 
