@@ -176,7 +176,6 @@ const LandingPage = () => {
         <p style={{ margin: '0 0 12px' }}>Build By Nitesh Yadav</p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: 16 }}>
           <a href="https://x.com/NiteshhXd" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>X (Twitter)</a>
-          <a href="https://github.com/NiteshxD" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>GitHub</a>
         </div>
       </footer>
     </div>
